@@ -119,3 +119,8 @@ La entrega de este examen debe ser un enlace a un repositorio en GitHub llamado 
 - Archivo principal de ejecución basado en Python.
 - Archivos modularizados que den funcionalidad al programa principal de Python.
 - Archivo JSON que almacene la información del programa en sí.
+
+
+
+
+
