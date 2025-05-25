@@ -1,7 +1,7 @@
-from .modules.menu_file import *
-from .modules.resources.mensajes import *
+from src.modules import gestion_ventas
+from src.recursos.mensajes import *
 
-if __name__ == '__main__':
+def pancamp_app():
 
     program = True
     while program:
@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
         if (option == 1):
             """Ventas"""
-            ventas()
+            gestion_ventas.ventas()
 
         elif (option == 2):
             """Compras"""
@@ -44,7 +44,7 @@ if __name__ == '__main__':
                 print('Gracias, no vemos pronto!!')
                 program = False
 
-            elif (option.lower() == 'n'):
+            elif (salida_opt.lower() == 'n'):
                 print('De acuerdo!!')
                 continue
 
@@ -53,3 +53,7 @@ if __name__ == '__main__':
 
         else:
             print('\nElija una opción valida')
+
+
+if __name__ == '__main__':
+    pancamp_app()

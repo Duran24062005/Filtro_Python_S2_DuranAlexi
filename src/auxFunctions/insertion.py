@@ -1,10 +1,9 @@
 import json
-from db.db_pancamp import database
 
 
 def abrirJSON():
     dictTemporal = []
-    with open('./db/db_pancamp.json', 'r') as datos:
+    with open('../db/db_pancamp.json', 'r') as datos:
         dictTemporal = json.load(datos)
     return dictTemporal
     
