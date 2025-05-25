@@ -1,5 +1,5 @@
-from src.menu_file import *
-from resources.mensajes import *
+from .modules.menu_file import *
+from .modules.resources.mensajes import *
 
 if __name__ == '__main__':
 

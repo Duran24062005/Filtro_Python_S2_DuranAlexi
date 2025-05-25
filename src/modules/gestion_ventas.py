@@ -23,10 +23,3 @@ def ventas():
             nombre_v, cargo, nombre_cliente, 
             client_address , venta_date, 
             nombre_product, cant_product, unit_price))
-
-def auth_user(user):
-    pass
-
-
-def finish_program():
-    print('Gracias, no vemos pronto!!')
