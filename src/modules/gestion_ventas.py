@@ -7,6 +7,7 @@ from tabulate import tabulate
 
 
 def ventas():
+    print(gestion_ventas_message)
     nombre_v = input('Diga, su nombre: ')
     cargo = input('Diga, su cargo: ')
     print('\n============================================\n')
@@ -18,7 +19,7 @@ def ventas():
     unit_price = int(input('Precio unitario: '))
 
     print(
-        register_user(
+        create_new_sale(
             nombre_v, cargo, nombre_cliente, 
             client_address , nombre_product, 
             cant_product, unit_price))
@@ -28,14 +29,14 @@ def calcular_valor_total(unidades, valor_unidad):
     return valor_unidad*unidades
     
 
-def register_user(
+def create_new_sale(
         name, cargo, name_client, 
         client_address, product_name, 
         product_cant, unit_price
         ):
 
     valor_total = calcular_valor_total(product_cant, unit_price)
-    hoy = datetime.now().strftime('%Y-%m-%d')
+    hoy = str(datetime.now().strftime('%Y-%m-%d'))
     
     new_venta = {
         "fecha": hoy,
@@ -54,16 +55,19 @@ def register_user(
             "Valor total venta": valor_total
         }
     }
+    
+    new_register = guardarDatos(new_venta, 1)
 
-    data = [
-        ["Fecha", hoy],
-        ["Vendedor", name],
-        ["Cargo", cargo],
-        ["Cliente", name_client],
-        ["Dirección Cliente", client_address],
-        ["Producto", product_name],
-        ["Cantidad", product_cant],
-        ["Precio Unidad", unit_price],
-        ["Valor Total Venta", valor_total]
-    ]
-    print(tabulate(data, headers=['Campo', 'Valor'], tablefmt='rounded_grid'))
+    if (new_register):
+        data = [
+            ["Fecha", hoy],
+            ["Vendedor", name],
+            ["Cargo", cargo],
+            ["Cliente", name_client],
+            ["Dirección Cliente", client_address],
+            ["Producto", product_name],
+            ["Cantidad", product_cant],
+            ["Precio Unidad", unit_price],
+            ["Valor Total Venta", valor_total]
+        ]
+        print(tabulate(data, headers=['Campo', 'Valor'], tablefmt='rounded_grid'))

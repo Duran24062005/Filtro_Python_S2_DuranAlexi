@@ -39,6 +39,13 @@ vendedor = """
 """
 
 
+gestion_ventas_message = """
+============================================
+            Gestor de ventas
+============================================
+"""
+
+
 finish_program_message = '''\n
 Estas seguro?
 Por favor, presiona "s" para continuar o "n" para regresar al menu:
